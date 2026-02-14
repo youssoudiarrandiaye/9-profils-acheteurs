@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les 9 Profils d'Acheteurs - Boostez vos Ventes E-commerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --red-dark: #8B0000;
+            --red-bright: #DC143C;
+            --green-bright: #00FF00;
+            --green-dark: #00B300;
+            --black: #000000;
+            --white: #FFFFFF;
+            --gray-light: #F5F5F5;
+            --gray-dark: #1a1a1a;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+            background: var(--white);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+        }
+
+        .impact-text {
+            font-family: 'Bebas Neue', cursive;
+            letter-spacing: 2px;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, var(--red-dark) 0%, var(--black) 50%, var(--green-dark) 100%);
+            color: var(--white);
+            padding: 80px 20px 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--green-bright);
+            color: var(--black);
+            padding: 8px 24px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 20px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 .highlight {
+            color: var(--green-bright);
+            text-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 3rem;
+            color: var(--green-bright);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* AVANT/APRÈS SECTION */
+        .before-after {
+            padding: 80px 20px;
+            background: var(--gray-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 50px;
+            text-transform: uppercase;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .comparison-card {
+            padding: 40px;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .comparison-card.before {
+            background: linear-gradient(135deg, var(--red-dark), #550000);
+            color: var(--white);
+        }
+
+        .comparison-card.after {
+            background: linear-gradient(135deg, var(--green-dark), #008000);
+            color: var(--white);
+        }
+
+        .comparison-label {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            padding: 10px 30px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+        }
+
+        .comparison-stat {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 4rem;
+            margin: 20px 0;
+            display: block;
+        }
+
+        .comparison-list {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        .comparison-list li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .comparison-list li::before {
+            content: '✗';
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .comparison-card.after .comparison-list li::before {
+            content: '✓';
+        }
+
+        /* PROBLEM SECTION */
+        .problem-section {
+            padding: 80px 20px;
+            background: var(--white);
+        }
+
+        .problem-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .problem-intro h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            margin-bottom: 30px;
+            color: var(--red-dark);
+        }
+
+        .problem-intro p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .quiz-box {
+            background: var(--gray-light);
+            padding: 40px;
+            border-radius: 20px;
+            border-left: 5px solid var(--green-bright);
+            margin: 40px 0;
+        }
+
+        .quiz-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--black);
+        }
+
+        .bias-highlight {
+            background: var(--red-bright);
+            color: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 40px 0;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        /* 9 PROFILS GRID */
+        .profiles-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 100%);
+        }
+
+        .profiles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .profile-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid var(--green-bright);
+        }
+
+        .profile-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+
+        .profile-number {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 3rem;
+            color: var(--green-bright);
+            line-height: 1;
+        }
+
+        .profile-name {
+            font-size: 1.5rem;
+            color: var(--black);
+            margin: 10px 0;
+            font-weight: 700;
+        }
+
+        .profile-subtitle {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .profile-description {
+            line-height: 1.7;
+            color: #333;
+        }
+
+        .profile-description strong {
+            color: var(--red-dark);
+        }
+
+        /* AGITATION SECTION */
+        .agitation-section {
+            padding: 80px 20px;
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .pain-points {
+            max-width: 900px;
+            margin: 50px auto;
+        }
+
+        .pain-item {
+            background: rgba(220, 20, 60, 0.1);
+            border-left: 4px solid var(--red-bright);
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            animation: slideIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+
+        .pain-item:nth-child(1) { animation-delay: 0.1s; }
+        .pain-item:nth-child(2) { animation-delay: 0.2s; }
+        .pain-item:nth-child(3) { animation-delay: 0.3s; }
+        .pain-item:nth-child(4) { animation-delay: 0.4s; }
+        .pain-item:nth-child(5) { animation-delay: 0.5s; }
+        .pain-item:nth-child(6) { animation-delay: 0.6s; }
+        .pain-item:nth-child(7) { animation-delay: 0.7s; }
+        .pain-item:nth-child(8) { animation-delay: 0.8s; }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .impact-stat {
+            text-align: center;
+            margin: 60px 0;
+            padding: 40px;
+            background: var(--red-dark);
+            border-radius: 20px;
+        }
+
+        .impact-stat .big-number {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 5rem;
+            color: var(--green-bright);
+            display: block;
+        }
+
+        /* SOLUTION SECTION */
+        .solution-section {
+            padding: 80px 20px;
+            background: var(--white);
+        }
+
+        .solution-intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 60px;
+        }
+
+        .solution-intro h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--green-dark);
+            margin-bottom: 30px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, var(--green-dark), var(--green-bright));
+            color: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .benefit-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        /* PRICING SECTION */
+        .pricing-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, var(--black), var(--gray-dark));
+            color: var(--white);
+        }
+
+        .pricing-card {
+            max-width: 600px;
+            margin: 50px auto;
+            background: var(--white);
+            color: var(--black);
+            padding: 60px 40px;
+            border-radius: 30px;
+            box-shadow: 0 30px 80px rgba(0, 255, 0, 0.3);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card::before {
+            content: '50% DE RÉDUCTION';
+            position: absolute;
+            top: 30px;
+            right: -80px;
+            background: var(--red-bright);
+            color: var(--white);
+            padding: 10px 100px;
+            transform: rotate(45deg);
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .price-old {
+            text-decoration: line-through;
+            font-size: 2.5rem;
+            color: #999;
+            display: block;
+            margin-bottom: 10px;
+            position: relative;
+            font-family: 'Bebas Neue', cursive;
+        }
+        
+        .price-old::after {
+            content: '❌';
+            position: absolute;
+            right: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+        }
+
+        .price-current {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 6rem;
+            color: var(--green-dark);
+            display: block;
+            margin: 20px 0;
+            text-shadow: 0 4px 20px rgba(0, 179, 0, 0.3);
+            position: relative;
+        }
+        
+        .price-current::before {
+            content: '🔥';
+            position: absolute;
+            left: -60px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 3rem;
+            animation: burn 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes burn {
+            0%, 100% { transform: translateY(-50%) scale(1); }
+            50% { transform: translateY(-50%) scale(1.2); }
+        }
+
+        .price-urgency {
+            background: var(--red-bright);
+            color: var(--white);
+            padding: 15px;
+            border-radius: 10px;
+            font-weight: 700;
+            margin: 30px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--green-dark), var(--green-bright));
+            color: var(--white);
+            padding: 25px 60px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            margin: 30px 0;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            box-shadow: 0 10px 30px rgba(0, 255, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 255, 0, 0.5);
+        }
+
+        .guarantee {
+            background: var(--gray-light);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+
+        .guarantee h3 {
+            color: var(--green-dark);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        /* BONUS SECTION */
+        .bonus-section {
+            padding: 80px 20px;
+            background: var(--green-dark);
+            color: var(--white);
+        }
+
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .bonus-card {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .bonus-value {
+            color: var(--green-bright);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* FAQ SECTION */
+        .faq-section {
+            padding: 80px 20px;
+            background: var(--white);
+        }
+
+        .faq-item {
+            background: var(--gray-light);
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 15px;
+            border-left: 5px solid var(--green-bright);
+        }
+
+        .faq-question {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 15px;
+        }
+
+        .faq-answer {
+            color: #333;
+            line-height: 1.7;
+        }
+
+        /* FOOTER CTA */
+        .footer-cta {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, var(--red-dark), var(--black));
+            color: var(--white);
+            text-align: center;
+        }
+
+        .footer-cta h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 30px;
+        }
+
+        .footer-cta .cta-button {
+            margin: 30px 0;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .author-info {
+            margin-bottom: 20px;
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--green-bright);
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 20px 80px;
+            }
+
+            .hero-stats {
+                gap: 20px;
+            }
+
+            .profiles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">🚀 FORMATION E-COMMERCE</div>
+            <h1>Les <span class="highlight">9 Profils d'Acheteurs</span><br>Que Tout E-Commerçant Doit Connaître</h1>
+            <p class="hero-subtitle">Arrêtez de perdre 70% de vos visiteurs. Découvrez pourquoi votre site ne convertit pas.</p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">5/mois ↓</span>
+                    <span class="stat-label">Vendeur Offline</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">→</span>
+                    <span class="stat-label"></span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">150/mois ↑</span>
+                    <span class="stat-label">Vendeur Digital</span>
+                </div>
+            </div>
+
+            <a href="#pricing" class="cta-button">Je Veux Booster Mes Ventes</a>
+        </div>
+    </section>
+
+    <!-- AVANT/APRÈS SECTION -->
+    <section class="before-after">
+        <div class="container">
+            <h2 class="section-title">La Transformation</h2>
+            
+
+            <div class="comparison-grid">
+                <div class="comparison-card before">
+                    <div class="comparison-label">AVANT ✗</div>
+                    <h3>Vendeur Offline</h3>
+                    <span class="comparison-stat">5 ventes/mois</span>
+                    <ul class="comparison-list">
+                        <li>Tu optimises pour un fantôme</li>
+                        <li>Taux de conversion catastrophique</li>
+                        <li>70-80% de visiteurs perdus</li>
+                        <li>Paniers abandonnés en masse</li>
+                        <li>Site conçu pour TOI uniquement</li>
+                        <li>Biais de projection total</li>
+                    </ul>
+                </div>
+
+                <div class="comparison-card after">
+                    <div class="comparison-label">APRÈS ✓</div>
+                    <h3>Vendeur Digital</h3>
+                    <span class="comparison-stat">150 ventes/mois</span>
+                    <ul class="comparison-list">
+                        <li>Tu comprends les 9 psychologies</li>
+                        <li>Taux de conversion multiplié par 3</li>
+                        <li>Chaque profil trouve son compte</li>
+                        <li>Paniers validés facilement</li>
+                        <li>Site = symphonie cognitive</li>
+                        <li>Machine à vendre 24/7</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <p style="font-size: 1.5rem; font-weight: 700; color: var(--black);">
+                    <strong>TES CLIENTS SONT SUR INTERNET, PAS DANS LA RUE.</strong>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEM SECTION -->
+    <section class="problem-section">
+        <div class="container">
+            <div class="problem-intro">
+                <h2>Tu Optimises Ton Site Pour Un Fantôme</h2>
+                <p>Le fameux "avatar client" théorique... <strong>il n'existe pas.</strong></p>
+                <p>Oups, désolé !</p>
+            </div>
+
+            <div class="quiz-box">
+                <h3>🎯 Allez, on va faire un petit jeu :</h3>
+                <p style="font-size: 1.2rem; line-height: 1.8;">
+                    Regarde bien l'image ci-dessous. <strong>Quel profil d'acheteur es-tu ?</strong><br>
+                    Réponds-y honnêtement.<br><br>
+                    Tu es plutôt sceptique ? Impulsif ? Data First ?<br><br>
+                    C'est bon, tu t'es reconnu ?
+                </p>
+
+            </div>
+
+            <div class="bias-highlight">
+                🎯 C'EST LÀ QUE SE TROUVE TON PROBLÈME<br>
+                Le BIAIS DE PROJECTION<br>
+                Croire que tout le monde est comme toi
+            </div>
+
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p style="font-size: 1.2rem; line-height: 1.8; margin: 30px 0;">
+                    Si tu es un <strong>sceptique</strong> par exemple, tu as certainement blindé ton site de garanties...<br><br>
+                    Mais tu as oublié de mettre :
+                </p>
+                <ul style="list-style: none; font-size: 1.1rem; line-height: 2; text-align: left; max-width: 600px; margin: 20px auto;">
+                    <li>❌ De l'émotion pour l'impulsif</li>
+                    <li>❌ Des données pour l'analytique</li>
+                    <li>❌ De l'urgence pour le chasseur de promos</li>
+                    <li>❌ De l'exclusivité pour le prestigieux</li>
+                </ul>
+                <p style="font-size: 1.3rem; font-weight: 700; margin: 40px 0; color: var(--red-dark);">
+                    Tu as conçu un site qui TE vendrait à TOI.<br>
+                    Sauf que de l'autre côté de l'écran, la réalité est beaucoup plus complexe.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9 PROFILS SECTION -->
+    <section class="profiles-section">
+        <div class="container">
+            <h2 class="section-title">Les 9 Profils Psychologiques</h2>
+            <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto 60px;">
+                En auditant des dizaines de parcours clients, j'ai identifié <strong>9 psychologies radicalement différentes</strong> derrière l'écran.
+            </p>
+
+            <div class="profiles-grid">
+                <!-- Profil 1 -->
+                <div class="profile-card">
+                    <div class="profile-number">01</div>
+                    <h3 class="profile-name">L'Impulsif</h3>
+                    <p class="profile-subtitle">(Le Coup de Cœur)</p>
+                    <div class="profile-description">
+                        <p><strong>Caractéristique :</strong> Achète sur une émotion forte et immédiate, souvent sans réfléchir.</p>
+                        <p style="margin-top: 15px;"><strong>Comportement :</strong> Très sensible au design visuel et aux offres "Vente Flash". Clique sur les pubs sociales.</p>
+                        <p style="margin-top: 15px;"><strong>Ce qu'il faut :</strong> S'il doit chercher le bouton "Acheter", il est déjà parti.</p>
+                    </div>
+                </div>
+
+                <!-- Profil 2 -->
+                <div class="profile-card">
+                    <div class="profile-number">02</div>
+                    <h3 class="profile-name">L'Analytique</h3>
+                    <p class="profile-subtitle">(Data First)</p>
+                    <div class="profile-description">
+                        <p><strong>Caractéristique :</strong> A besoin de preuves logiques, de chiffres et de données techniques.</p>
+                        <p style="margin-top: 15px;"><strong>Comportement :</strong> Lit les fiches produits en entier, compare les caractéristiques et cherche des graphiques.</p>
+                        <p style="margin-top: 15px;"><strong>Ce qu'il faut :</strong> Sans "Technical Sheet", il ne sort pas la CB.</p>
+                    </div>
+                </div>
+
+                <!-- Profil 3 -->
+                <div class="profile-card">
+                    <div class="profile-number">03</div>
+                    <h3 class="profile-name">Le Chasseur de Promos</h3>
+                    <p class="profile-subtitle">(ROI Hero)</p>
+                    <div class="profile-description">
+                        <p><strong>Caractéristique :</strong> Sa plus grande satisfaction est de ne jamais payer le prix fort.</p>
+                        <p style="margin-top: 15px;"><strong>Comportement :</strong> Cherche activement les codes promos, les bannières de réduction et attend les soldes.</p>
+                        <p style="margin-top: 15px;"><strong>Ce qu'il faut :</strong> Il scanne la page à la recherche d'un "%" ou d'un prix barré.</p>
+                    </div>
+                </div>
+
+                <!-- Profil 4 -->
+                <div class="profile-card">
+                    <div class="profile-number">04</div>
+                    <h3 class="profile-name">Le Fidèle</h3>
+                    <p class="profile-subtitle">(L'Ambassadeur)</p>
+                    <div class="profile-description">
+                        <p><strong>Caractéristique :</strong> Achète par appartenance. Il ne jure que par une seule marque.</p>
+                        <p style="margin-top: 15px;"><strong>Comportement :</strong> Ne regarde même pas la concurrence. Achète chaque nouveau produit dès sa sortie.</p>
+                        <p style="margin-top: 15px;"><strong>Ce qu'il faut :</strong> C'est le rêve : il achète parce que c'est TOI.</p>
+                    </div>
+                </div>
+
+                <!-- Profil 5 -->
+                <div class="profile-card">
+                    <div class="profile-number">05</div>
+                    <h3 class="profile-name">Le Sceptique</h3>
+                    <p class="profile-subtitle">(Zéro Risque)</p>
+                    <div class="profile-description">
+                        <p><strong>Caractéristique :</strong> Sa priorité est d'éviter les regrets et les arnaques.</p>
+                        <p style="margin-top: 15px;"><strong>Comportement :</strong> Scrolle directement vers les avis négatifs et vérifie les conditions de remboursement.</p>
+                        <p style="margin-top: 15px;"><strong>Ce qu'il faut :</strong> Son cerveau hurle "ARNAQUE" à chaque instant.</p>
+                    </div>
+                </div>
+
+                <!-- Profil 6 -->
+                <div class="profile-card">
+                    <div class="profile-number">06</div>
+                    <h3 class="profile-name">Le Prestigieux</h3>
+                    <p class="profile-subtitle">(Statut Social)</p>
+                    <div class="profile-description">
+                        <p><strong>Caractéristique :</strong> Cherche l'exclusivité et le statut social.</p>
+                        <p style="margin-top: 15px;"><strong>Comportement :</strong> Fuit les produits "grand public". Est rassuré par un prix élevé et des éditions limitées.</p>
+                        <p style="margin-top: 15px;"><strong>Ce qu'il faut :</strong> Si ton produit est trop accessible, il perd tout intérêt.</p>
+                    </div>
+                </div>
+
+                <!-- Profil 7 -->
+                <div class="profile-card">
+                    <div class="profile-number">07</div>
+                    <h3 class="profile-name">L'Éco-Responsable</h3>
+                    <p class="profile-subtitle">(Achat Éthique)</p>
+                    <div class="profile-description">
+                        <p><strong>Caractéristique :</strong> Ses achats doivent être en accord parfait avec ses valeurs éthiques.</p>
+                        <p style="margin-top: 15px;"><strong>Comportement :</strong> Vérifie la page "À Propos", la provenance des matériaux et l'engagement RSE du site.</p>
+                        <p style="margin-top: 15px;"><strong>Ce qu'il faut :</strong> Il va ignorer ton produit pour éplucher tes engagements.</p>
+                    </div>
+                </div>
+
+                <!-- Profil 8 -->
+                <div class="profile-card">
+                    <div class="profile-number">08</div>
+                    <h3 class="profile-name">L'Indécis</h3>
+                    <p class="profile-subtitle">(L'Abandonniste)</p>
+                    <div class="profile-description">
+                        <p><strong>Caractéristique :</strong> Est paralysé par la peur de faire le mauvais choix.</p>
+                        <p style="margin-top: 15px;"><strong>Comportement :</strong> Remplit son panier mais ne valide jamais. A besoin de relances par mail ou de guides d'achat.</p>
+                        <p style="margin-top: 15px;"><strong>Ce qu'il faut :</strong> Le paradoxe du choix le tétanise.</p>
+                    </div>
+                </div>
+
+                <!-- Profil 9 -->
+                <div class="profile-card">
+                    <div class="profile-number">09</div>
+                    <h3 class="profile-name">L'Acheteur de Confort</h3>
+                    <p class="profile-subtitle">(Fainéantise Efficace)</p>
+                    <div class="profile-description">
+                        <p><strong>Caractéristique :</strong> Veut que le processus soit le plus court et fluide possible.</p>
+                        <p style="margin-top: 15px;"><strong>Comportement :</strong> Adore le paiement en 1 clic et la livraison express. Quitte le site si le tunnel est trop long.</p>
+                        <p style="margin-top: 15px;"><strong>Ce qu'il faut :</strong> La moindre friction et c'est fini.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AGITATION SECTION -->
+    <section class="agitation-section">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--white);">Ton Trafic N'est Pas Un Bloc Homogène</h2>
+            <p style="text-align: center; font-size: 1.3rem; max-width: 800px; margin: 0 auto 50px;">
+                Tes visiteurs sont un <strong style="color: var(--red-bright);">chaos de psychologies contradictoires</strong>.
+            </p>
+
+            <div class="pain-points">
+                <div class="pain-item">
+                    ❌ <strong>L'impulsif</strong> quitte ton site parce que le bouton "Acheter" n'est pas assez visible
+                </div>
+                <div class="pain-item">
+                    ❌ <strong>L'analytique</strong> abandonne car il ne trouve pas les spécifications techniques
+                </div>
+                <div class="pain-item">
+                    ❌ <strong>Le chasseur de promos</strong> file chez ton concurrent qui affiche "-30%" en gros
+                </div>
+                <div class="pain-item">
+                    ❌ <strong>Le sceptique</strong> te prend pour un arnaqueur parce que tu n'as pas de politique de remboursement claire
+                </div>
+                <div class="pain-item">
+                    ❌ <strong>Le prestigieux</strong> ne voit aucune exclusivité et pense que ton produit est "trop commun"
+                </div>
+                <div class="pain-item">
+                    ❌ <strong>L'éco-responsable</strong> n'a trouvé AUCUNE info sur tes engagements RSE
+                </div>
+                <div class="pain-item">
+                    ❌ <strong>L'indécis</strong> a mis 3 articles dans son panier... il y a 2 semaines
+                </div>
+                <div class="pain-item">
+                    ❌ <strong>L'acheteur de confort</strong> a vu qu'il fallait créer un compte et a fermé l'onglet
+                </div>
+            </div>
+
+            <div class="impact-stat">
+                <span class="big-number">70-80%</span>
+                <p style="font-size: 1.5rem; margin-top: 20px;">De tes visiteurs perdus sans comprendre pourquoi</p>
+            </div>
+
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 30px;">
+                    Tu regardes Google Analytics en te demandant :<br>
+                    "Pourquoi mon taux de rebond est si élevé ?"<br>
+                    "Pourquoi j'ai autant de paniers abandonnés ?"<br>
+                    "Pourquoi personne ne clique sur mon CTA ?"
+                </p>
+                <p style="font-size: 1.5rem; font-weight: 700; color: var(--red-bright);">
+                    La vérité brutale ?<br>
+                    Tu as passé des heures à optimiser pour 1 seul profil psychologique... le tien.<br>
+                    Et tu ignores les 8 autres qui représentent la majorité de ton trafic.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION SECTION -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="solution-intro">
+                <h2>La Symphonie Cognitive</h2>
+                <p style="font-size: 1.3rem; line-height: 1.8;">
+                    Le secret d'une page qui performe ? <strong>L'architecture.</strong><br><br>
+                    Ton site ne peut pas être juste informatif.<br>
+                    Il doit être une <strong style="color: var(--green-dark);">SYMPHONIE COGNITIVE</strong>.
+                </p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <span class="benefit-icon">📊</span>
+                    <h3 class="benefit-title">De la Data</h3>
+                    <p>Pour l'Analytique qui veut des preuves</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">🛡️</span>
+                    <h3 class="benefit-title">De la Réassurance</h3>
+                    <p>Pour le Sceptique qui a peur de l'arnaque</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">❤️</span>
+                    <h3 class="benefit-title">De l'Émotion</h3>
+                    <p>Pour l'Impulsif qui achète au coup de cœur</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">⚡</span>
+                    <h3 class="benefit-title">De l'Urgence</h3>
+                    <p>Pour le Chasseur de promos</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">💎</span>
+                    <h3 class="benefit-title">De l'Exclusivité</h3>
+                    <p>Pour le Prestigieux</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">🌱</span>
+                    <h3 class="benefit-title">Des Valeurs</h3>
+                    <p>Pour l'Éco-responsable</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">⚡</span>
+                    <h3 class="benefit-title">De la Simplicité</h3>
+                    <p>Pour l'Acheteur de confort</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">🎯</span>
+                    <h3 class="benefit-title">Du Guidance</h3>
+                    <p>Pour l'Indécis</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">👥</span>
+                    <h3 class="benefit-title">Preuve Sociale</h3>
+                    <p>Pour le Fidèle (en devenir)</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 60px;">
+                <h3 style="font-size: 2rem; margin-bottom: 30px;">Ce Que Tu Vas Obtenir</h3>
+                <div style="max-width: 800px; margin: 0 auto; text-align: left;">
+                    <div style="background: var(--gray-light); padding: 30px; border-radius: 15px; margin: 20px 0;">
+                        <h4 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--green-dark);">📖 Guide PDF Premium (120+ pages)</h4>
+                        <p>Décryptage psychologique approfondi de chaque profil + Études de cas réels e-commerce</p>
+                    </div>
+                    <div style="background: var(--gray-light); padding: 30px; border-radius: 15px; margin: 20px 0;">
+                        <h4 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--green-dark);">✅ Checklist d'Optimisation</h4>
+                        <p>9 checklists spécifiques + Les erreurs fatales à éviter</p>
+                    </div>
+                    <div style="background: var(--gray-light); padding: 30px; border-radius: 15px; margin: 20px 0;">
+                        <h4 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--green-dark);">🎨 Templates de Pages Produits</h4>
+                        <p>5 templates prêts à l'emploi + Wireframes annotés</p>
+                    </div>
+                    <div style="background: var(--gray-light); padding: 30px; border-radius: 15px; margin: 20px 0;">
+                        <h4 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--green-dark);">📊 Tableau de Bord d'Analyse</h4>
+                        <p>Comment identifier les profils dominants dans ton trafic</p>
+                    </div>
+                    <div style="background: var(--gray-light); padding: 30px; border-radius: 15px; margin: 20px 0;">
+                        <h4 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--green-dark);">💡 Swipe Files (50 exemples)</h4>
+                        <p>Éléments de réassurance qui convertissent + Calls-to-action par profil</p>
+                    </div>
+                    <div style="background: var(--gray-light); padding: 30px; border-radius: 15px; margin: 20px 0;">
+                        <h4 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--green-dark);">📧 Scripts d'Emails de Relance</h4>
+                        <p>9 séquences d'emails personnalisées par profil</p>
+                    </div>
+                    <div style="background: var(--gray-light); padding: 30px; border-radius: 15px; margin: 20px 0;">
+                        <h4 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--green-dark);">🎥 Masterclass Vidéo (2h)</h4>
+                        <p>Session d'audit live d'un site e-commerce + Q&A</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--white);">Investissement</h2>
+            
+            <div class="pricing-card">
+                <p style="text-align: center; font-size: 1.1rem; margin-bottom: 20px; color: #666;">
+                    <strong>Prix normal</strong>
+                </p>
+                <span class="price-old">35.000 CFA</span>
+                
+                <div style="background: var(--red-bright); color: white; display: inline-block; padding: 10px 20px; border-radius: 10px; font-weight: 700; margin: 10px 0;">
+                    💰 TU ÉCONOMISES 17.500 CFA
+                </div>
+                
+                <p style="text-align: center; font-size: 1.3rem; margin: 20px 0; font-weight: 700; color: var(--green-dark);">
+                    <strong>Ton prix aujourd'hui</strong>
+                </p>
+                <span class="price-current">17.500 CFA</span>
+                <div class="price-urgency">
+                    ⏰ OFFRE DE LANCEMENT - 50% DE RÉDUCTION<br>
+                    Expire dans 48h
+                </div>
+
+                <a href="#" class="cta-button">Obtenir le Guide Maintenant</a>
+
+                <p style="margin: 20px 0; color: #666; font-size: 0.9rem;">
+                    Paiement sécurisé | Accès à vie
+                </p>
+
+                <div class="guarantee">
+                    <h3>🛡️ Garantie Satisfait ou Remboursé 30 Jours</h3>
+                    <p style="color: #333;">
+                        Tu appliques la méthode pendant 30 jours. Si tu ne vois pas d'amélioration de tes conversions, 
+                        je te rembourse intégralement. Sans condition. Sans question.
+                    </p>
+                </div>
+            </div>
+
+            <div style="max-width: 800px; margin: 60px auto; text-align: center; color: var(--white);">
+                <h3 style="font-size: 2rem; margin-bottom: 30px;">Ce Qui Va Changer Pour Toi</h3>
+                <div style="text-align: left; font-size: 1.1rem; line-height: 2;">
+                    <p>✅ Tu comprendras ENFIN pourquoi ton site ne convertit pas</p>
+                    <p>✅ Tu sauras exactement quels éléments ajouter/modifier</p>
+                    <p>✅ Tu arrêteras de perdre 70% de tes visiteurs</p>
+                    <p>✅ Tu augmenteras ton taux de conversion de 30 à 150%</p>
+                    <p>✅ Tu réduiras drastiquement tes paniers abandonnés</p>
+                    <p>✅ Tu transformeras ton site en machine à vendre 24/7</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BONUS SECTION -->
+    <section class="bonus-section">
+        <div class="container">
+            <h2 class="section-title">Bonus Exclusifs</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 50px;">
+                Si tu commandes aujourd'hui
+            </p>
+
+            <div class="bonus-grid">
+                <div class="bonus-card">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 15px;">🎯 BONUS #1</h3>
+                    <p style="font-size: 1.1rem; margin-bottom: 10px;">Audit vidéo de ton site (15 min)</p>
+                    <p class="bonus-value">Valeur : 195.000 CFA</p>
+                    <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">
+                        Limité aux 20 premiers acheteurs
+                    </p>
+                </div>
+
+                <div class="bonus-card">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 15px;">📊 BONUS #2</h3>
+                    <p style="font-size: 1.1rem; margin-bottom: 10px;">Google Sheets d'analyse de trafic</p>
+                    <p class="bonus-value">Valeur : 31.000 CFA</p>
+                    <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">
+                        Identifie automatiquement les profils dominants
+                    </p>
+                </div>
+
+                <div class="bonus-card">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 15px;">🔥 BONUS #3</h3>
+                    <p style="font-size: 1.1rem; margin-bottom: 10px;">Accès au groupe privé Telegram</p>
+                    <p class="bonus-value">Valeur : 129.000 CFA/an</p>
+                    <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">
+                        Communauté d'e-commerçants + entraide
+                    </p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <p style="font-size: 1.5rem; font-weight: 700;">VALEUR TOTALE : 355.000 CFA</p>
+                <p style="font-size: 2.5rem; font-weight: 700; color: var(--green-bright); margin: 20px 0;">
+                    TON PRIX AUJOURD'HUI : 17.500 CFA
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Questions Fréquentes</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ C'est compatible avec Shopify/WooCommerce/PrestaShop ?</div>
+                <div class="faq-answer">Oui, les principes psychologiques s'appliquent à toutes les plateformes e-commerce.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ Je ne suis pas technique, je vais y arriver ?</div>
+                <div class="faq-answer">Absolument. Tout est expliqué en langage simple avec des exemples visuels et des templates prêts à l'emploi.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ Combien de temps pour voir des résultats ?</div>
+                <div class="faq-answer">La plupart des e-commerçants voient des améliorations dès la première semaine d'implémentation.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ C'est valable pour tous les secteurs ?</div>
+                <div class="faq-answer">Oui, que tu vendes de la mode, de la tech, des produits digitaux ou du coaching, les 9 profils psychologiques sont universels.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ Et si ça ne marche pas pour moi ?</div>
+                <div class="faq-answer">Garantie satisfait ou remboursé 30 jours. Tu testes sans risque. Si tu n'es pas satisfait, tu récupères ton argent.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section style="padding: 80px 20px; background: var(--gray-light);">
+        <div class="container">
+            <h2 class="section-title">Ce Que Disent Les E-Commerçants</h2>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px;">
+                <div style="background: var(--white); padding: 30px; border-radius: 15px; border-left: 5px solid var(--green-bright);">
+                    <p style="font-style: italic; margin-bottom: 20px; line-height: 1.7;">
+                        "J'ai augmenté mon taux de conversion de 47% en 3 semaines. J'avais complètement oublié le profil 'Analytique' sur mon site."
+                    </p>
+                    <p style="font-weight: 700;">— Sarah M., Boutique Mode</p>
+                </div>
+
+                <div style="background: var(--white); padding: 30px; border-radius: 15px; border-left: 5px solid var(--green-bright);">
+                    <p style="font-style: italic; margin-bottom: 20px; line-height: 1.7;">
+                        "Maintenant je comprends pourquoi mes clients abandonnaient au moment du paiement. J'ai simplifié le tunnel et mes ventes ont explosé."
+                    </p>
+                    <p style="font-weight: 700;">— Karim B., E-commerce Tech</p>
+                </div>
+
+                <div style="background: var(--white); padding: 30px; border-radius: 15px; border-left: 5px solid var(--green-bright);">
+                    <p style="font-style: italic; margin-bottom: 20px; line-height: 1.7;">
+                        "Le ROI a été immédiat. J'ai récupéré mon investissement dès la première semaine."
+                    </p>
+                    <p style="font-weight: 700;">— Julie T., Dropshipping</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER CTA -->
+    <section class="footer-cta">
+        <div class="container">
+            <h2>Combien De Ventes Vas-Tu Encore Perdre ?</h2>
+            <p style="font-size: 1.2rem; max-width: 800px; margin: 30px auto; line-height: 1.8;">
+                Bien entendu, personne n'est figé dans une case.<br>
+                Mais nous avons souvent <strong>une caractéristique dominante qui déclenche l'achat</strong>.<br><br>
+                La question n'est pas de savoir SI tu vas optimiser ton site.<br>
+                La question est : <strong style="color: var(--green-bright);">combien de ventes vas-tu encore perdre avant de le faire ?</strong>
+            </p>
+            
+            <a href="#pricing" class="cta-button">Oui, Je Veux Booster Mes Conversions</a>
+
+            <div style="margin-top: 50px; font-size: 1rem; opacity: 0.9;">
+                <p><strong>P.S.</strong> N'oublie pas, tu as 30 jours pour tester. Zéro risque. Si ça ne marche pas pour toi, tu récupères ton argent.</p>
+                <p style="margin-top: 15px;"><strong>P.P.S.</strong> L'offre à 17.500 CFA expire dans 48h. Après, le prix remonte à 35.000 CFA.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="author-info">
+                <p class="author-name">Youssou Diarra Ndiaye</p>
+                <p style="font-size: 1.1rem; color: var(--green-bright);">STRATÉGIE DIGITALE DU E-COMMERCE EN AFRIQUE</p>
+                <p style="margin-top: 10px; opacity: 0.8;">Expert en Psychologie du E-commerce</p>
+            </div>
+
+            <div style="margin-top: 30px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.2);">
+                <p style="font-size: 0.9rem; opacity: 0.7;">
+                    © 2026 Youssou Diarra Ndiaye - Tous droits réservés<br>
+                    Abonne-toi et repartage pour aider ton réseau
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll pour les ancres
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animation au scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.profile-card, .benefit-card, .bonus-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Countdown timer (optionnel - à activer si nécessaire)
+        function startCountdown() {
+            const deadline = new Date(Date.now() + 48 * 60 * 60 * 1000); // 48h
+            
+            const updateTimer = () => {
+                const now = new Date();
+                const diff = deadline - now;
+                
+                if (diff <= 0) {
+                    return;
+                }
+                
+                const hours = Math.floor(diff / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                
+                // Mettre à jour l'affichage si nécessaire
+            };
+            
+            setInterval(updateTimer, 1000);
+            updateTimer();
+        }
+        
+        // startCountdown(); // Décommenter pour activer
+    </script>
+
+</body>
+</html>
